@@ -33,8 +33,9 @@ app.get('/movie', function handleSortMovie(req,res) {
             movie.country.toLowerCase().includes(req.query.genre.toLowerCase()))
     }
 
-    let averageVote=req.query.avg_vote.parseInt();
+    
     if(averageVote){
+        let averageVote=req.query.avg_vote.parseInt();
         response=reponse.filter(movie =>
             (movie.avg_vote>=averageVote))
     }
