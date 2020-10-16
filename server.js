@@ -34,7 +34,7 @@ app.get('/movie', function handleSortMovie(req,res) {
     }
 
     
-    if(averageVote){
+    if(req.query.avg_vote){
         let averageVote=req.query.avg_vote.parseInt();
         response=reponse.filter(movie =>
             (movie.avg_vote>=averageVote))
